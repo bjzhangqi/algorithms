@@ -4,6 +4,8 @@ import com.myproc.util.TestDataUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.awt.*;
+
 public class BruteForceTest {
     @Test
     public void testSelectionSort() {
@@ -67,5 +69,14 @@ public class BruteForceTest {
     public void testStringMatch6() {
         int result = BruteForce.stringMatch(null, null);
         Assert.assertEquals(-1, result);
+    }
+
+    @Test
+    public void testIsConvex() {
+        int xpoints[] = {25, 145, 145, 80, 25};
+        int ypoints[] = {25, 25, 145, 160, 145};
+        int npoints = 5;
+        Polygon polygon = new Polygon(xpoints, ypoints, npoints);
+        Assert.assertTrue(BruteForce.isConvex(polygon));
     }
 }
