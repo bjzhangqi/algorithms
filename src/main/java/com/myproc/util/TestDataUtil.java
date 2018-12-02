@@ -1,6 +1,8 @@
 package com.myproc.util;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestDataUtil {
     public static int[] createRandomIntArray(int length) {
@@ -19,5 +21,13 @@ public class TestDataUtil {
             a[i] = a[j];
             a[j] = t;
         }
+    }
+
+    public static <T> List<T> toList(T[] arr) {
+        List<T> list = new ArrayList<>();
+        for (T elt : arr) {
+            list.add(elt);
+        }
+        return list;
     }
 }

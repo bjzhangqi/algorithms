@@ -115,26 +115,6 @@ public class BruteForce {
 
 }
 
-// ax + by = c
-// a = y2 - y1, b = x1 - x2, c = x1y2 - y1x2
-class Line {
-    private int a;
-    private int b;
-    private int c;
-
-    public Line(Point p1, Point p2) {
-        this.a = p2.y - p1.y;
-        this.b = p1.x = p2.x;
-        this.c = p1.x * p2.y - p1.y * p2.x;
-    }
-
-    public Line(int x1, int y1, int x2, int y2) {
-        this.a = y2 - y1;
-        this.b = x1 - x2;
-        this.c = x1 * y2 - y2 * x2;
-    }
-}
-
 class MyPanel extends JPanel {
     public void paint(Graphics g) {
         int xpoints[] = {25, 145, 145, 80, 25};

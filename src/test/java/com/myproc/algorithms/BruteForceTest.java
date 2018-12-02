@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.*;
+import java.lang.reflect.Array;
+import java.util.List;
 
 public class BruteForceTest {
     @Test
@@ -78,5 +80,28 @@ public class BruteForceTest {
         int npoints = 5;
         Polygon polygon = new Polygon(xpoints, ypoints, npoints);
         Assert.assertTrue(BruteForce.isConvex(polygon));
+    }
+
+    @Test
+    public void testSwapStringArrayElement() {
+        String[] strings = {"a", "b", "c"};
+        TestDataUtil.swap(strings, 0,1);
+        Assert.assertEquals("bac", String.join("", strings));
+    }
+
+    @Test
+    public void testSwapIntegerArrauElement() {
+        Integer[] integers = {0, 1, 2, 3, 4, 5};
+        TestDataUtil.swap(integers, 0, integers.length - 1);
+        Assert.assertArrayEquals(integers, new Integer[]{5, 1, 2, 3, 4, 0});
+    }
+
+    @Test
+    public void testToList() {
+        Integer[] integers = {0, 1, 2, 3, 4, 5};
+        List<Integer> list = TestDataUtil.toList(integers);
+        for (int i = 0; i < integers.length; i++) {
+            Assert.assertEquals(list.get(i), integers[i]);
+        }
     }
 }
