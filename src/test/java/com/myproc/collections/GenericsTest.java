@@ -92,6 +92,20 @@ public class GenericsTest {
                 System.out.println(m.toGenericString());
             }
         }
+
+        for (Method m : Apple.class.getMethods()) {
+            if (m.getName().equals("clone")) {
+                System.out.println(m.toGenericString());
+            }
+        }
+    }
+
+    @Test
+    public void testCell() {
+        Cell<String> a = new Cell<>("one");
+        Cell<Integer> b = new Cell<>(2);
+        Assert.assertTrue(a.getId() == 0 && b.getId() == 1 && Cell.getCount() == 2);
+        Assert.assertEquals("[one, 2]", Cell.getValues().toString());
     }
 
 }
