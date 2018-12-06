@@ -108,4 +108,16 @@ public class GenericsTest {
         Assert.assertEquals("[one, 2]", Cell.getValues().toString());
     }
 
+    @Test
+    public void testLinkedCollection() {
+        LinkedCollection<Integer> lc = new LinkedCollection<>();
+        for (int i = 0; i < 10; i++) {
+            lc.add(i);
+        }
+        int count = 0;
+        for (Iterator iter = lc.iterator(); iter.hasNext();) {
+            Assert.assertEquals(count, iter.next());
+            count++;
+        }
+    }
 }
