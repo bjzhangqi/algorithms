@@ -9,6 +9,7 @@ public class LinkedCollection<E> extends AbstractCollection<E> {
     private Node first = new Node(null);
     private Node last = first;
     private int size = 0;
+
     public LinkedCollection() {
     }
 

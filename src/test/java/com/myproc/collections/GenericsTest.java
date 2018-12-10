@@ -115,9 +115,10 @@ public class GenericsTest {
             lc.add(i);
         }
         int count = 0;
-        for (Iterator iter = lc.iterator(); iter.hasNext();) {
+        for (Iterator iter = lc.iterator(); iter.hasNext(); ) {
             Assert.assertEquals(count, iter.next());
             count++;
         }
+        List list = Arrays.asList(new int[]{1, 2, 3});
     }
 }

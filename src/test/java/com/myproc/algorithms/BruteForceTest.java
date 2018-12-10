@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.List;
 
 public class BruteForceTest {
@@ -85,7 +84,7 @@ public class BruteForceTest {
     @Test
     public void testSwapStringArrayElement() {
         String[] strings = {"a", "b", "c"};
-        TestDataUtil.swap(strings, 0,1);
+        TestDataUtil.swap(strings, 0, 1);
         Assert.assertEquals("bac", String.join("", strings));
     }
 
