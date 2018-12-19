@@ -120,5 +120,19 @@ public class GenericsTest {
             count++;
         }
         List list = Arrays.asList(new int[]{1, 2, 3});
+        Assert.assertTrue(!lc.equals(list));
+    }
+
+    @Test
+    public void testGenericsForReflection() {
+        Class ki = Integer.class;
+        Number n = new Integer(40);
+        Class kn = n.getClass();
+        Assert.assertTrue(ki == kn);
+
+        Class<Integer> ki2 = Integer.class;
+        Number n2 = new Integer(42);
+        Class<? extends Number> kn2 = n2.getClass();
+        Assert.assertTrue(ki2 == kn2);
     }
 }
