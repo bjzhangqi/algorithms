@@ -134,5 +134,10 @@ public class GenericsTest {
         Number n2 = new Integer(42);
         Class<? extends Number> kn2 = n2.getClass();
         Assert.assertTrue(ki2 == kn2);
+
+        List<Integer> ints = new ArrayList<Integer>();
+        List<String> strs = new ArrayList<String>();
+        Assert.assertEquals(ints.getClass(), strs.getClass());
+        Assert.assertEquals(ints.getClass(), ArrayList.class);
     }
 }
